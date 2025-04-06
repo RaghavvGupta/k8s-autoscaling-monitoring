@@ -247,6 +247,7 @@ eksctl delete cluster --name demo-cluster --region ap-south-1
 - **Log Destination:** Amazon CloudWatch Logs
 - **Deployment:** Deployed Fluent Bit as a DaemonSet across all nodes
 - **Centralized Logging:** Application and container logs are available in CloudWatch grouped by pod
+![Alt Text](Logging1.jpg)
 
 ## 📊 Monitoring Setup
 
@@ -254,7 +255,7 @@ eksctl delete cluster --name demo-cluster --region ap-south-1
 - **Deployment:** Installed via `kubectl apply`
 - **Metrics Tracked:** CPUUtilization of EC2 instances running the cluster
 - **Dashboard:** Custom CloudWatch dashboard created via AWS CLI
-
+![Alt Text](Logging.jpg)
 ## 🔔 Alerting Implementation
 
 - **SNS Topic:** Created topic `K8sAlertTopic`
@@ -263,15 +264,17 @@ eksctl delete cluster --name demo-cluster --region ap-south-1
   - Metric: CPUUtilization (EC2)
   - Trigger: When average CPU usage exceeds 70% for 10 minutes
   - Action: Sends notification to the SNS topic
-
+![Alt Text](MonitoringMail.jpg)
 ## 🛡️ Reliability Measures
 
 - **Kubernetes Self-Healing:** Ensured via deployments and readiness probes
 - **Multi-AZ Deployment:** All EC2 instances span across multiple availability zones (verified via AWS Console)
 
-## 📎 References
+## 📎 Relevant SS
+![Alt Text](Logging2.jpg)
+![Alt Text](Logging3.jpg)
+![Alt Text](Logging4.jpg)
+![Alt Text](Logging5.jpg)
 
-- CloudWatch Docs
-- Fluent Bit Official DaemonSet configs
-- AWS CLI Documentation
+
 
